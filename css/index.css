@@ -1,0 +1,202 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+@font-face {
+  font-family: "FuturaStd Medium";
+  src: url("./font/FuturaFont/FuturaStd-Medium.eot");
+  src: local("futurastd");
+  src: url("./font/FuturaFont/FuturaStd-Medium.svg#bingo") format("svg");
+  src: url("./font/FuturaFont/FuturaStd-Medium.otf") format("opentype"); }
+@font-face {
+  font-family: "FuturaStd Bold";
+  src: url("./font/FuturaFont/FuturaStd-Bold.eot");
+  src: local("futurastd");
+  src: url("./font/FuturaFont/FuturaStd-Bold.svg#bingo") format("svg");
+  src: url("./font/FuturaFont/FuturaStd-Bold.otf") format("opentype"); }
+@font-face {
+  font-family: "FuturaStd MediumOblique";
+  src: url("./font/FuturaFont/FuturaStd-MediumOblique.eot");
+  src: local("futurastd");
+  src: url("./font/FuturaFont/FuturaStd-MediumOblique.svg#bingo") format("svg");
+  src: url("./font/FuturaFont/FuturaStd-MediumOblique.otf") format("opentype"); }
+.page {
+  width: 100%;
+  min-height: 100%; }
+
+.page-first .first-background {
+  float: left;
+  background-image: url(../img/landing.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; }
+.page-first .header {
+  float: left;
+  width: 100%;
+  height: 72px;
+  box-sizing: border-box;
+  padding: 16px 6px;
+  border-bottom: 1px solid #90060a; }
+  .page-first .header .banner {
+    font-family: "FuturaStd Bold";
+    float: left;
+    color: #90060a;
+    font-size: 40px;
+    line-height: 40px; }
+  .page-first .header .menu {
+    float: left;
+    padding: 13px 6px;
+    font-family: "FuturaStd Medium"; }
+    .page-first .header .menu .link {
+      padding: 0px 12px;
+      font-size: 13px;
+      line-height: 14px;
+      color: #353535;
+      text-decoration: none; }
+  .page-first .header .log-info {
+    float: right; }
+    .page-first .header .log-info .tel-number {
+      font-family: "FuturaStd Medium";
+      float: left;
+      padding: 11px 12px;
+      font-size: 13px;
+      line-height: 14px; }
+    .page-first .header .log-info .login-button {
+      font-family: "FuturaStd Medium";
+      float: right;
+      font-size: 13px;
+      padding: 11px 12px; }
+.page-first .content {
+  float: left;
+  width: 100%;
+  height: calc(100% - 260px);
+  overflow: hidden; }
+  .page-first .content .image-content {
+    position: relative;
+    height: 100%;
+    width: 80%;
+    background-image: url(../img/lettres\ scrabble.png);
+    background-size: contain;
+    background-repeat: no-repeat; }
+  .page-first .content .txt-content {
+    position: relative;
+    width: 70%;
+    height: 30%;
+    left: 30%;
+    top: -30%;
+    box-sizing: border-box;
+    padding-right: 10%;
+    float: left;
+    font-family: "FuturaStd Medium";
+    color: #353535;
+    font-size: 22px; }
+  .page-first .content .special-logo {
+    font-family: "FuturaStd Bold";
+    color: #90060a; }
+.page-first .footer {
+  float: left;
+  width: 100%;
+  height: 188px;
+  border-top: 1px solid #90060a;
+  border-bottom: 1px solid #90060a;
+  box-sizing: border-box;
+  padding: 0px 10%; }
+  .page-first .footer .logos {
+    display: table;
+    height: 50%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden; }
+    .page-first .footer .logos .contain {
+      vertical-align: middle;
+      display: table-cell;
+      overflow: hidden; }
+    .page-first .footer .logos .logo {
+      overflow: hidden;
+      box-sizing: border-box;
+      margin: auto;
+      width: 200px;
+      height: 50px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      filter: grayscale(100%); }
+    .page-first .footer .logos .logo-bnp {
+      background-image: url(./../img/logo_bnp.gif); }
+    .page-first .footer .logos .logo-zodiac {
+      background-image: url(./../img/logo_zodiac.jpg); }
+    .page-first .footer .logos .logo-amundi {
+      background-image: url(./../img/logo_amundi.jpg); }
+  .page-first .footer .quote {
+    height: 50%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto; }
+    .page-first .footer .quote .quote-first {
+      display: inline;
+      color: #90060a;
+      font-family: "FuturaStd Bold";
+      font-size: 24px; }
+    .page-first .footer .quote .quote-txt {
+      display: inline;
+      color: #969696;
+      font-family: "FuturaStd MediumOblique";
+      font-size: 20px; }
+    .page-first .footer .quote .quote-author {
+      width: 100%;
+      text-align: right;
+      float: left;
+      color: #969696;
+      font-family: "FuturaStd Medium";
+      font-size: 20px; }
+
+.page-second .wrap {
+  display: table;
+  float: left;
+  width: 100%;
+  height: 20%; }
+.page-second .main-txt {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  text-align: center;
+  font-family: "FuturaStd Medium";
+  font-size: 30px;
+  color: #79797f; }
+.page-second .color-white {
+  color: #969696; }
+.page-second .side {
+  float: left;
+  width: 50%;
+  height: 60%; }
+  .page-second .side .img-second {
+    width: 90%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: contain;
+    background-repeat: no-repeat; }
+  .page-second .side .wrap-side {
+    width: 50%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto; }
+  .page-second .side .img-left {
+    background-image: url(../img/ico\ expertises\ spec.png); }
+  .page-second .side .img-right {
+    background-image: url(../img/ico\ besoins\ rec.png); }
+  .page-second .side .legend-second {
+    float: left;
+    font-family: "FuturaStd MediumOblique";
+    font-size: 20px;
+    width: 60%;
+    height: 50%; }
+  .page-second .side .span-red {
+    color: #90060a; }
+.page-second .footer {
+  float: left;
+  width: 100%;
+  height: 20%;
+  background-image: url(../img/method.jpg); }
