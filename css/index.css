@@ -21,6 +21,12 @@ html, body {
   src: local("futurastd");
   src: url("./font/FuturaFont/FuturaStd-MediumOblique.svg#bingo") format("svg");
   src: url("./font/FuturaFont/FuturaStd-MediumOblique.otf") format("opentype"); }
+@font-face {
+  font-family: "FuturaStd Light";
+  src: url("./font/FuturaFont/FuturaStd-Light.eot");
+  src: local("futurastd");
+  src: url("./font/FuturaFont/FuturaStd-Light.svg#bingo") format("svg");
+  src: url("./font/FuturaFont/FuturaStd-Light.otf") format("opentype"); }
 .page {
   width: 100%;
   min-height: 100%; }
@@ -156,7 +162,9 @@ html, body {
   display: table;
   float: left;
   width: 100%;
-  height: 20%; }
+  height: 36px;
+  box-sizing: border-box;
+  padding: 24px 0px; }
 .page-second .main-txt {
   display: table-cell;
   vertical-align: middle;
@@ -168,19 +176,20 @@ html, body {
 .page-second .color-white {
   color: #969696; }
 .page-second .side {
+  overflow: hidden;
   float: left;
   width: 50%;
-  height: 60%; }
+  height: calc(100% - 248px); }
   .page-second .side .img-second {
-    width: 90%;
-    height: 50%;
+    width: 210px;
+    height: 170px;
     margin-left: auto;
     margin-right: auto;
     background-size: contain;
     background-repeat: no-repeat; }
   .page-second .side .wrap-side {
     width: 50%;
-    height: 100%;
+    height: 50%;
     margin-left: auto;
     margin-right: auto; }
   .page-second .side .img-left {
@@ -188,15 +197,62 @@ html, body {
   .page-second .side .img-right {
     background-image: url(../img/ico\ besoins\ rec.png); }
   .page-second .side .legend-second {
-    float: left;
     font-family: "FuturaStd MediumOblique";
     font-size: 20px;
     width: 60%;
-    height: 50%; }
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto; }
   .page-second .side .span-red {
     color: #90060a; }
 .page-second .footer {
   float: left;
+  overflow: hidden;
   width: 100%;
-  height: 20%;
-  background-image: url(../img/method.jpg); }
+  height: 164px;
+  background-image: url(../img/method.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-family: "FuturaStd Medium";
+  font-size: 40px;
+  color: #EFEFEF;
+  text-align: center; }
+
+.page-third .wrap-line {
+  box-sizing: border-box;
+  padding: 12px 15%;
+  float: left;
+  width: 100%;
+  height: 30%; }
+  .page-third .wrap-line .span-title {
+    font-family: "FuturaStd Medium";
+    font-size: 27px; }
+  .page-third .wrap-line .span-red {
+    color: #90060a; }
+  .page-third .wrap-line .span-blue {
+    color: #064e90; }
+  .page-third .wrap-line .span-green {
+    color: #069067; }
+  .page-third .wrap-line .left, .page-third .wrap-line .right {
+    width: 30%;
+    height: 100%;
+    font-family: "FuturaStd Light";
+    font-size: 16px;
+    color: #7a797a; }
+  .page-third .wrap-line .left {
+    float: left; }
+  .page-third .wrap-line .right {
+    float: right; }
+  .page-third .wrap-line .icon {
+    width: 10%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: contain;
+    background-repeat: no-repeat; }
+  .page-third .wrap-line .icon-one {
+    background-image: url(../img/puce1.png); }
+  .page-third .wrap-line .icon-two {
+    background-image: url(../img/puce2.png); }
+  .page-third .wrap-line .icon-three {
+    background-image: url(../img/puce3.png); }

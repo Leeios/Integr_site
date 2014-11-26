@@ -161,6 +161,15 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 						{tag: '.footer', as: 'secondFooter'}
 					]},/*END*/
 					{tag: '.page-third.page', attr: {name: 'page-third'}, children: [
+						['.wrap-line', [
+							{tag: '.left-one.left', as: 'leftOne'}, '.icon-one.icon', '.right-one.right'
+						]],
+						['.wrap-line', [
+							'.left-two.left', '.icon-two.icon', {tag: '.right-two.right', as: 'rightTwo'}
+						]],
+						['.wrap-line', [
+							{tag: '.left-three.left', as: 'leftThree'}, '.icon-three.icon', '.right-three.right'
+						]]
 					]},/*END*/
 					{tag: '.page-fourth.page', attr: {name: 'page-fourth'}, children: [
 					]}
@@ -176,7 +185,21 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 			this.mainSecondTxt.innerHTML = 'Des solutions <span class="color-white">' + this.HTMLentities('pour vos coûts.') + '</span> A bas ' + this.HTMLentities('coûts.');
 			this.secondTxtLeft.innerHTML = "Besoin d'une <span class='span-red'>" + this.HTMLentities('expertise spécifique') + '</span> pour votre domaine ' + this.HTMLentities("d'activités ?");
 			this.secondTxtRight.innerHTML = 'Besoin de gagner du temps sur des <span class="span-red">besoins recurrents ?</span>';
-			this.secondFooter.innerHTML = '';
+			this.secondFooter.innerHTML = this.HTMLentities('Notre méthode ?') + '<br />'
+											+ this.HTMLentities('Reprendre la main sur ses données.') + '<br />'
+											+ this.HTMLentities('Pour prendre les bonnes décisions.');
+			this.leftOne.innerHTML = '<span class="span-title"><span class="span-red">Co-constuire</span>' + '<br />'
+										+ this.HTMLentities('le périmètre') + '</span><br /><br />'
+										+ '<span class="span-red">SANS CONTEXTE </span>'
+										+ this.HTMLentities('la donnée ne vaut rien. Nous commençons par échanger avec vous pour construire une cartographie de vos activités et des données pertinentes à collecter');
+			this.rightTwo.innerHTML = '<span class="span-title">Assurer' + '<br />'
+											+ 'des <span class="span-blue">bases solides</span></span><br /><br />'
+										+ '<span class="span-blue">STRUCTURER LES INFORMATIONS </span>'
+										+ this.HTMLentities('et progressivement les rendre fiables. Nous remettons à plat vos données pour les rendre intelligibles et prévenir toute erreur de référence');
+			this.leftThree.innerHTML = '<span class="span-title">' + this.HTMLentities('Modéliser à partir') + '<br />'
+											+ 'des <span class="span-green">processus</span></span><br /><br />'
+										+ '<span class="span-green">SANS CONTEXTE </span>'
+										+ this.HTMLentities("le texte ne veut rien dire. En effet c'est mieux de le finir si on veut en retirer le moindre sens, mais au moins comme ça on voit le layout.");
 		},
 
 		displayLoginBox: function(e) {
