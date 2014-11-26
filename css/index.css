@@ -179,7 +179,10 @@ html, body {
   overflow: hidden;
   float: left;
   width: 50%;
-  height: calc(100% - 248px); }
+  height: calc(100% - 248px);
+  display: table;
+  box-sizing: border-box;
+  padding: 0px 15%; }
   .page-second .side .img-second {
     width: 210px;
     height: 170px;
@@ -188,8 +191,10 @@ html, body {
     background-size: contain;
     background-repeat: no-repeat; }
   .page-second .side .wrap-side {
-    width: 50%;
-    height: 50%;
+    float: left;
+    display: table-cell;
+    vertical-align: middle;
+    width: 80%;
     margin-left: auto;
     margin-right: auto; }
   .page-second .side .img-left {
@@ -199,7 +204,7 @@ html, body {
   .page-second .side .legend-second {
     font-family: "FuturaStd MediumOblique";
     font-size: 20px;
-    width: 60%;
+    width: 90%;
     height: 50%;
     margin-left: auto;
     margin-right: auto; }
