@@ -255,7 +255,8 @@ html, body {
 
 .page-third {
   border-bottom: 1px solid #90060a;
-  height: 800px; }
+  height: 800px;
+  min-height: 100%; }
   .page-third .wrap-page {
     position: relative; }
   .page-third .frise {
