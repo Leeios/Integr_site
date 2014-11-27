@@ -191,7 +191,6 @@ html, body {
     background-size: contain;
     background-repeat: no-repeat; }
   .page-second .side .wrap-side {
-    float: left;
     display: table-cell;
     vertical-align: middle;
     width: 80%;
@@ -223,41 +222,104 @@ html, body {
   color: #EFEFEF;
   text-align: center; }
 
-.page-third .wrap-line {
-  box-sizing: border-box;
-  padding: 12px 15%;
-  float: left;
-  width: 100%;
-  height: 30%; }
-  .page-third .wrap-line .span-title {
-    font-family: "FuturaStd Medium";
-    font-size: 27px; }
-  .page-third .wrap-line .span-red {
-    color: #90060a; }
-  .page-third .wrap-line .span-blue {
-    color: #064e90; }
-  .page-third .wrap-line .span-green {
-    color: #069067; }
-  .page-third .wrap-line .left, .page-third .wrap-line .right {
-    width: 30%;
-    height: 100%;
-    font-family: "FuturaStd Light";
-    font-size: 16px;
-    color: #7a797a; }
-  .page-third .wrap-line .left {
-    float: left; }
-  .page-third .wrap-line .right {
-    float: right; }
-  .page-third .wrap-line .icon {
-    width: 10%;
-    height: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    background-size: contain;
+.page-third {
+  border-bottom: 1px solid #90060a; }
+  .page-third .wrap-line {
+    box-sizing: border-box;
+    padding: 12px 15%;
+    float: left;
+    width: 100%;
+    height: 30%; }
+    .page-third .wrap-line .span-title {
+      font-family: "FuturaStd Medium";
+      font-size: 27px; }
+    .page-third .wrap-line .span-red {
+      color: #90060a; }
+    .page-third .wrap-line .span-blue {
+      color: #064e90; }
+    .page-third .wrap-line .span-green {
+      color: #069067; }
+    .page-third .wrap-line .left, .page-third .wrap-line .right {
+      position: relative;
+      width: 30%;
+      height: 100%;
+      font-family: "FuturaStd Light";
+      font-size: 16px;
+      color: #7a797a; }
+    .page-third .wrap-line .left {
+      float: left; }
+    .page-third .wrap-line .right {
+      float: right; }
+    .page-third .wrap-line .icon {
+      position: relative;
+      width: 10%;
+      height: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .page-third .wrap-line .icon-one {
+      background-image: url(../img/puce1.png); }
+    .page-third .wrap-line .icon-two {
+      background-image: url(../img/puce2.png); }
+    .page-third .wrap-line .icon-three {
+      background-image: url(../img/puce3.png); }
+
+.page-fourth {
+  height: 150%;
+  background-image: url(../img/bottom.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat; }
+  .page-fourth .part {
+    float: left;
+    width: 100%; }
+  .page-fourth .up-part {
+    height: 66%; }
+    .page-fourth .up-part .wrap-title {
+      display: table;
+      width: 100%;
+      height: 20%; }
+    .page-fourth .up-part .title {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      width: 100%;
+      font-family: "FuturaStd Medium";
+      font-size: 30px;
+      color: #79797f; }
+    .page-fourth .up-part .color-white {
+      color: #969696; }
+    .page-fourth .up-part .color-red {
+      color: #90060a; }
+    .page-fourth .up-part .content {
+      float: left;
+      width: 100%; }
+    .page-fourth .up-part .part {
+      float: left;
+      height: 80%;
+      width: 50%; }
+    .page-fourth .up-part .img {
+      width: 260px;
+      height: 210px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      margin-left: auto;
+      margin-right: auto; }
+    .page-fourth .up-part .txt {
+      width: 100%;
+      font-family: "FuturaStd Medium";
+      font-size: 20px;
+      color: #79797f;
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto; }
+    .page-fourth .up-part .left-img {
+      background-image: url(../img/gestion\ couts\ it.png); }
+    .page-fourth .up-part .right-img {
+      background-image: url(../img/optimisation\ vignoble.png); }
+  .page-fourth .down-part {
+    height: 33%;
+    background-image: url(../img/bandeau\ footer.jpg);
+    opacity: 0.7;
+    background-size: 100%;
     background-repeat: no-repeat; }
-  .page-third .wrap-line .icon-one {
-    background-image: url(../img/puce1.png); }
-  .page-third .wrap-line .icon-two {
-    background-image: url(../img/puce2.png); }
-  .page-third .wrap-line .icon-three {
-    background-image: url(../img/puce3.png); }

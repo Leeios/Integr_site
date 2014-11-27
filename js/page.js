@@ -172,6 +172,15 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 						]]
 					]},/*END*/
 					{tag: '.page-fourth.page', attr: {name: 'page-fourth'}, children: [
+						['.up-part.part', [
+							['.wrap-title', [{tag: '.title', as: 'thirdTitle'}]],
+							['.content', [
+								['.left-part.part', ['.left-img.img', {tag: '.left-txt.txt', as: 'thirdLeftTxt'}]],
+								['.right-part.part', ['.right-img.img', {tag: '.right-txt.txt', as: 'thirdRightTxt'}]]
+							]]
+						]],
+						['.down-part.part', [
+						]],
 					]}
 				]}
 			);
@@ -200,6 +209,9 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 											+ 'des <span class="span-green">processus</span></span><br /><br />'
 										+ '<span class="span-green">SANS CONTEXTE </span>'
 										+ this.HTMLentities("le texte ne veut rien dire. En effet c'est mieux de le finir si on veut en retirer le moindre sens, mais au moins comme ça on voit le layout.");
+			this.thirdTitle.innerHTML = '<span class="color-white">' + this.HTMLentities('Découvrez nos') + '</span> cas clients.';
+			this.thirdLeftTxt.innerHTML = 'Gestion des <span class="color-red">' + this.HTMLentities('coûts IT');
+			this.thirdRightTxt.innerHTML = 'Optimisation <span class="color-red">vignobles</span>';
 		},
 
 		displayLoginBox: function(e) {
