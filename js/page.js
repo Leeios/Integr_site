@@ -173,13 +173,16 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 					]},/*END*/
 					{tag: '.page-fourth.page', attr: {name: 'page-fourth'}, children: [
 						['.up-part.part', [
-							['.wrap-title', [{tag: '.title', as: 'thirdTitle'}]],
+							['.wrap-title', [{tag: '.title', as: 'fourthTitle'}]],
 							['.content', [
-								['.left-part.part', ['.left-img.img', {tag: '.left-txt.txt', as: 'thirdLeftTxt'}]],
-								['.right-part.part', ['.right-img.img', {tag: '.right-txt.txt', as: 'thirdRightTxt'}]]
+								['.left-part.part', ['.left-img.img', {tag: '.left-txt.txt', as: 'fourthLeftTxt'}]],
+								['.right-part.part', ['.right-img.img', {tag: '.right-txt.txt', as: 'fourthRightTxt'}]]
 							]]
 						]],
 						['.down-part.part', [
+							['.wrap-title', [{tag: '.title', as: 'fourthTitleDown'}]],
+							{tag: '.contact', as: 'fourthContact'},
+							{tag: '.logo', as: 'fourthLogo'}
 						]],
 					]}
 				]}
@@ -192,11 +195,13 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 			this.quoteAuthor.innerHTML = "- Some boss";
 
 			this.mainSecondTxt.innerHTML = 'Des solutions <span class="color-white">' + this.HTMLentities('pour vos coûts.') + '</span> A bas ' + this.HTMLentities('coûts.');
+
 			this.secondTxtLeft.innerHTML = "Besoin d'une <span class='span-red'>" + this.HTMLentities('expertise spécifique') + '</span> pour votre domaine ' + this.HTMLentities("d'activités ?");
 			this.secondTxtRight.innerHTML = 'Besoin de gagner du temps sur des <span class="span-red">besoins recurrents ?</span>';
 			this.secondFooter.innerHTML = this.HTMLentities('Notre méthode ?') + '<br />'
 											+ this.HTMLentities('Reprendre la main sur ses données.') + '<br />'
 											+ this.HTMLentities('Pour prendre les bonnes décisions.');
+
 			this.leftOne.innerHTML = '<span class="span-title"><span class="span-red">Co-constuire</span>' + '<br />'
 										+ this.HTMLentities('le périmètre') + '</span><br /><br />'
 										+ '<span class="span-red">SANS CONTEXTE </span>'
@@ -209,9 +214,16 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 											+ 'des <span class="span-green">processus</span></span><br /><br />'
 										+ '<span class="span-green">SANS CONTEXTE </span>'
 										+ this.HTMLentities("le texte ne veut rien dire. En effet c'est mieux de le finir si on veut en retirer le moindre sens, mais au moins comme ça on voit le layout.");
-			this.thirdTitle.innerHTML = '<span class="color-white">' + this.HTMLentities('Découvrez nos') + '</span> cas clients.';
-			this.thirdLeftTxt.innerHTML = 'Gestion des <span class="color-red">' + this.HTMLentities('coûts IT');
-			this.thirdRightTxt.innerHTML = 'Optimisation <span class="color-red">vignobles</span>';
+
+			this.fourthTitle.innerHTML = '<span class="color-white">' + this.HTMLentities('Découvrez nos') + '</span> cas clients.';
+			this.fourthLeftTxt.innerHTML = 'Gestion des <span class="color-red">' + this.HTMLentities('coûts IT');
+			this.fourthRightTxt.innerHTML = 'Optimisation <span class="color-red">vignobles</span>';
+
+			this.fourthTitleDown.innerHTML = this.HTMLentities('Demander une démonstration');
+			this.fourthContact.innerHTML = 'Stephane Janin<br />'
+											+ this.HTMLentities('+ (33) 6 87 24 90 10')
+											+ '<br />' + this.HTMLentities('stephane.janin@myexpertizer.com');
+			this.fourthLogo.innerHTML = 'Myexpertizer.';
 		},
 
 		displayLoginBox: function(e) {
