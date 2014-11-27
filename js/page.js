@@ -166,7 +166,12 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 								}.bind(this)
 							}}]]]
 						],
-						{tag: '.quote', as: 'quoteContain', children: ['.quote-first', {tag: '.quote-txt', as: 'quoteTxt'}, {tag: '.quote-author', as: 'quoteAuthor'}]}]]
+						{tag: '.wrap-quote', as: 'wrapQuote', children: [
+							['.quote', ['.quote-first', {tag: '.quote-txt', as: 'quoteTxt0'}, {tag: '.quote-author', as: 'quoteAuthor0'}]],
+							['.quote', ['.quote-first', {tag: '.quote-txt', as: 'quoteTxt1'}, {tag: '.quote-author', as: 'quoteAuthor1'}]],
+							['.quote', ['.quote-first', {tag: '.quote-txt', as: 'quoteTxt2'}, {tag: '.quote-author', as: 'quoteAuthor2'}]]
+						]}
+						]]
 					]},/*END*/
 					{tag: '.page-second.page#page-second', children: [
 						['.wrap', [{tag:'.main-txt', as: 'mainSecondTxt',}]],
@@ -219,23 +224,19 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 		'+init': function() {
 			this.contentFirstTxT.innerHTML = 'Le logiciel <span class="special-logo">MyExpertizer</span>' + this.HTMLentities(' rend vos données exploitables, de manière pérenne, grâce à des expertises métiers embarquées et des règles intelligentes de traitement.');
 
-			this.quotes = [];
-			this.bosses = [];
 			/*0: BNP, 1: Zodiac, 2:Amundi*/
-			this.quotes[0] = 'It was really awesome. MyExpertizer has made my unreadable Excel actionnable in 1h30 where it usually took 3 days"';
-			this.bosses[0] = "- Some boss";
-			this.quotes[1] = 'Zt was really awesome. MyExpertizer has made my unreadable Excel actionnable in 1h30 where it usually took 3 days"';
-			this.bosses[1] = "- Zodiac boss";
-			this.quotes[2] = 'At was really awesome. MyExpertizer has made my unreadable Excel actionnable in 1h30 where it usually took 3 days"';
-			this.bosses[2] = "- Amundi boss";
+			this.quoteTxt0.innerHTML = 'It was really awesome. MyExpertizer has made my unreadable Excel actionnable in 1h30 where it usually took 3 days"';
+			this.quoteAuthor0.innerHTML = "- Some boss";
+			this.quoteTxt1.innerHTML = 'Zt was really awesome. MyExpertizer has made my unreadable Excel actionnable in 1h30 where it usually took 3 days"';
+			this.quoteAuthor1.innerHTML = "- Zodiac boss";
+			this.quoteTxt2.innerHTML = 'At was really awesome. MyExpertizer has made my unreadable Excel actionnable in 1h30 where it usually took 3 days"';
+			this.quoteAuthor2.innerHTML = "- Amundi boss";
 
-			this.current = 0;
 			this['logo0'].style.opacity = '1';
 			this['logo1'].style.opacity = '0.5';
 			this['logo2'].style.opacity = '0.5';
-			this.quoteTxt.innerHTML = this.quotes[0];
-			this.quoteAuthor.innerHTML = this.bosses[0];
-			this.switchQuote(0);
+			this.current = 0;
+			// this.switchQuote(0);
 
 			this.mainSecondTxt.innerHTML = 'Des solutions <span class="color-white">' + this.HTMLentities('pour vos coûts.') + '</span> A bas ' + this.HTMLentities('coûts.');
 
@@ -278,26 +279,14 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 
 			if (this.current === mark) return ;
 
+
 			this['logo' + this.current].style.opacity = '0.5';
 			this['logo' + mark].style.opacity = '1';
 
-			var dir = this.current < mark;
+			this.current = mark;
 
-			this.quoteContain.style.left = dir ? '-200%' : '200%';
+			this.wrapQuote.style.left = (-mark * 200) + '%';
 
-			setTimeout(function() {
-				this.quoteContain.style.display = 'none';
-				this.current = mark;
-				this.quoteTxt.innerHTML = this.quotes[this.current];
-				this.quoteAuthor.innerHTML = this.bosses[this.current];
-
-				this.quoteContain.style.left = dir ? '200%' : '-200%';
-
-				setTimeout(function() {
-					this.quoteContain.style.display = 'block';
-					this.quoteContain.style.left = '0px';
-				}.bind(this), 300);
-			}.bind(this), 300)
 		},
 
 		displayLoginBox: function(e) {

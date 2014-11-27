@@ -147,17 +147,20 @@ html, body
 				background-image: url(./../img/logo_zodiac.png)
 			.logo-amundi
 				background-image: url(./../img/logo_amundi.png)
-		.quote
-			// float: left
+		.wrap-quote
 			position: relative
+			float: left
+			width: 600%
 			height: 50%
-			width: 80%
-			margin-left: auto
-			margin-right: auto
 			transition: left 1s
+			left: 0px
+		.quote
+			float: left
+			height: 100%
+			width: 33%
 			.quote-first
-				display: inline
 				float: left
+				display: inline
 				margin-top: -15px
 				height: 50px
 				width: 50px
@@ -165,14 +168,16 @@ html, body
 				background-size: 100%
 				background-repeat: no-repeat
 			.quote-txt
+				float: left
 				display: inline
+				width: calc(100% - 50px)
 				color: #969696
 				font-family: "FuturaStd MediumOblique"
 				font-size: 20px
 			.quote-author
-				width: 100%
-				text-align: right
 				float: left
+				margin-left: 40%
+				width: 100%
 				color: #969696
 				font-family: "FuturaStd Medium"
 				font-size: 20px
