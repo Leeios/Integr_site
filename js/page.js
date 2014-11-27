@@ -144,11 +144,31 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 									}
 								]]
 							]],
-							['.content', ['.image-content', {tag: '.txt-content', as: 'contentFirstTxT'}]]
+							['.content', [['.wrap-content', [
+								'.image-content',
+								{tag: '.txt-content', as: 'contentFirstTxT'}
+							]]]]
 						]],
-						['.footer', [['.logos', [['.contain', ['.logo-bnp.logo']], ['.contain', ['.logo-zodiac.logo']], ['.contain', ['.logo-amundi.logo']]]], ['.quote', ['.quote-first "', {tag: '.quote-txt', as: 'quoteTxt'}, {tag: '.quote-author', as: 'quoteAuthor'}]]]]
+						['.footer', [['.logos', [
+							['.contain', [{tag: '.logo-bnp.logo', as: 'logo0', events: {
+								click: function() {
+									this.switchQuote(0);
+								}.bind(this)
+							}}]],
+							['.contain', [{tag: '.logo-zodiac.logo', as: 'logo1', events: {
+								click: function() {
+									this.switchQuote(1);
+								}.bind(this)
+							}}]],
+							['.contain', [{tag: '.logo-amundi.logo', as: 'logo2', events: {
+								click: function() {
+									this.switchQuote(2);
+								}.bind(this)
+							}}]]]
+						],
+						{tag: '.quote', as: 'quoteContain', children: ['.quote-first', {tag: '.quote-txt', as: 'quoteTxt'}, {tag: '.quote-author', as: 'quoteAuthor'}]}]]
 					]},/*END*/
-					{tag: '.page-second.page', attr: {name: 'page-second'}, children: [
+					{tag: '.page-second.page#page-second', children: [
 						['.wrap', [{tag:'.main-txt', as: 'mainSecondTxt',}]],
 						['.left-side.side', [{tag: '.wrap-left.wrap-side', children: [
 							'.img-left.img-second',
@@ -161,6 +181,7 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 						{tag: '.footer', as: 'secondFooter'}
 					]},/*END*/
 					{tag: '.page-third.page', attr: {name: 'page-third'}, children: [
+						'.frise',
 						['.wrap-line', [
 							{tag: '.left-one.left', as: 'leftOne'}, '.icon-one.icon', '.right-one.right'
 						]],
@@ -171,7 +192,7 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 							{tag: '.left-three.left', as: 'leftThree'}, '.icon-three.icon', '.right-three.right'
 						]]
 					]},/*END*/
-					{tag: '.page-fourth.page', attr: {name: 'page-fourth'}, children: [
+					{tag: '.page-fourth.page#page-fourth', children: [
 						['.up-part.part', [
 							['.wrap-title', [{tag: '.title', as: 'fourthTitle'}]],
 							['.content', [
@@ -190,9 +211,25 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 		},
 
 		'+init': function() {
-			this.contentFirstTxT.innerHTML = 'Le logiciel <span class="special-logo">MyExpertizer</span>' + this.HTMLentities(' rend vos données exploitables, de manière péreenne, grâce à des expertises métiers embraquées et des règles de traitement intelligents.');
-			this.quoteTxt.innerHTML = 'It was really awesome. MyExpertizer has made my unreadable Excel actionnable in 1h30 where it usually took 3 days"';
-			this.quoteAuthor.innerHTML = "- Some boss";
+			this.contentFirstTxT.innerHTML = 'Le logiciel <span class="special-logo">MyExpertizer</span>' + this.HTMLentities(' rend vos données exploitables, de manière pérenne, grâce à des expertises métiers embarquées et des règles intelligentes de traitement.');
+
+			this.quotes = [];
+			this.bosses = [];
+			/*0: BNP, 1: Zodiac, 2:Amundi*/
+			this.quotes[0] = 'It was really awesome. MyExpertizer has made my unreadable Excel actionnable in 1h30 where it usually took 3 days"';
+			this.bosses[0] = "- Some boss";
+			this.quotes[1] = 'Zt was really awesome. MyExpertizer has made my unreadable Excel actionnable in 1h30 where it usually took 3 days"';
+			this.bosses[1] = "- Zodiac boss";
+			this.quotes[2] = 'At was really awesome. MyExpertizer has made my unreadable Excel actionnable in 1h30 where it usually took 3 days"';
+			this.bosses[2] = "- Amundi boss";
+
+			this.current = 0;
+			this['logo0'].style.opacity = '1';
+			this['logo1'].style.opacity = '0.5';
+			this['logo2'].style.opacity = '0.5';
+			this.quoteTxt.innerHTML = this.quotes[0];
+			this.quoteAuthor.innerHTML = this.bosses[0];
+			this.switchQuote(0);
 
 			this.mainSecondTxt.innerHTML = 'Des solutions <span class="color-white">' + this.HTMLentities('pour vos coûts.') + '</span> A bas ' + this.HTMLentities('coûts.');
 
@@ -202,18 +239,15 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 											+ this.HTMLentities('Reprendre la main sur ses données.') + '<br />'
 											+ this.HTMLentities('Pour prendre les bonnes décisions.');
 
-			this.leftOne.innerHTML = '<span class="span-title"><span class="span-red">Co-constuire</span>' + '<br />'
-										+ this.HTMLentities('le périmètre') + '</span><br /><br />'
-										+ '<span class="span-red">SANS CONTEXTE </span>'
-										+ this.HTMLentities('la donnée ne vaut rien. Nous commençons par échanger avec vous pour construire une cartographie de vos activités et des données pertinentes à collecter');
-			this.rightTwo.innerHTML = '<span class="span-title">Assurer' + '<br />'
-											+ 'des <span class="span-blue">bases solides</span></span><br /><br />'
-										+ '<span class="span-blue">STRUCTURER LES INFORMATIONS </span>'
-										+ this.HTMLentities('et progressivement les rendre fiables. Nous remettons à plat vos données pour les rendre intelligibles et prévenir toute erreur de référence');
-			this.leftThree.innerHTML = '<span class="span-title">' + this.HTMLentities('Modéliser à partir') + '<br />'
-											+ 'des <span class="span-green">processus</span></span><br /><br />'
-										+ '<span class="span-green">SANS CONTEXTE </span>'
-										+ this.HTMLentities("le texte ne veut rien dire. En effet c'est mieux de le finir si on veut en retirer le moindre sens, mais au moins comme ça on voit le layout.");
+			this.leftOne.innerHTML = '<span class="span-title"><span class="span-red">'
+										+ this.HTMLentities('Préparer le cadre de travail') + '</span></span><br /><br />'
+										+ this.HTMLentities('Nous définissons ensemble les objectifs réalisables en fonction du contexte et des informations disponibles: indicateurs, données, mode de fonctionnement');
+			this.rightTwo.innerHTML = '<span class="span-title"><span class="span-blue">Co-construire</span>'
+										+ '<br /> le dispositif</span><br /><br />'
+										+ this.HTMLentities("Nous élaborons avec vous un système flexible qui repose sur l'organisation structurée et documentée des règles de gestion");
+			this.leftThree.innerHTML = '<span class="span-title">Assurer un fonctionnement<br />'
+											+ '<span class="span-green">' + this.HTMLentities('fiable dans la durée') + '</span></span><br /><br />'
+										+ this.HTMLentities("Le lien natif entre la vue métier et sa traduction technique facilite la compréhension partagée du dispositif et sécurise les évolutions");
 
 			this.fourthTitle.innerHTML = '<span class="color-white">' + this.HTMLentities('Découvrez nos') + '</span> cas clients.';
 			this.fourthLeftTxt.innerHTML = 'Gestion des <span class="color-red">' + this.HTMLentities('coûts IT');
@@ -224,6 +258,32 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 											+ this.HTMLentities('+ (33) 6 87 24 90 10')
 											+ '<br />' + this.HTMLentities('stephane.janin@myexpertizer.com');
 			this.fourthLogo.innerHTML = 'Myexpertizer.';
+		},
+
+		switchQuote: function(mark) {
+
+			if (this.current === mark) return ;
+
+			this['logo' + this.current].style.opacity = '0.5';
+			this['logo' + mark].style.opacity = '1';
+
+			var dir = this.current < mark;
+
+			this.quoteContain.style.left = dir ? '-200%' : '200%';
+
+			setTimeout(function() {
+				this.quoteContain.style.display = 'none';
+				this.current = mark;
+				this.quoteTxt.innerHTML = this.quotes[this.current];
+				this.quoteAuthor.innerHTML = this.bosses[this.current];
+
+				this.quoteContain.style.left = dir ? '200%' : '-200%';
+
+				setTimeout(function() {
+					this.quoteContain.style.display = 'block';
+					this.quoteContain.style.left = '0px';
+				}.bind(this), 300);
+			}.bind(this), 300)
 		},
 
 		displayLoginBox: function(e) {

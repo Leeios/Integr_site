@@ -77,10 +77,15 @@ html, body {
   width: 100%;
   height: calc(100% - 260px);
   overflow: hidden; }
-  .page-first .content .image-content {
-    position: relative;
+  .page-first .content .wrap-content {
     height: 100%;
     width: 80%;
+    margin-left: auto;
+    margin-right: auto; }
+  .page-first .content .image-content {
+    position: relative;
+    height: 417px;
+    width: 640px;
     background-image: url(../img/lettres\ scrabble.png);
     background-size: contain;
     background-repeat: no-repeat; }
@@ -88,10 +93,8 @@ html, body {
     position: relative;
     width: 70%;
     height: 30%;
-    left: 30%;
-    top: -30%;
-    box-sizing: border-box;
-    padding-right: 10%;
+    margin-left: 225px;
+    top: -120px;
     float: left;
     font-family: "FuturaStd Medium";
     color: #353535;
@@ -106,11 +109,12 @@ html, body {
   border-top: 1px solid #90060a;
   border-bottom: 1px solid #90060a;
   box-sizing: border-box;
-  padding: 0px 10%; }
+  padding: 0px 10%;
+  overflow: hidden; }
   .page-first .footer .logos {
     display: table;
     height: 50%;
-    width: 100%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
     overflow: hidden; }
@@ -130,21 +134,27 @@ html, body {
       -moz-filter: grayscale(100%);
       filter: grayscale(100%); }
     .page-first .footer .logos .logo-bnp {
-      background-image: url(./../img/logo_bnp.gif); }
+      background-image: url(./../img/logo_bnp.png); }
     .page-first .footer .logos .logo-zodiac {
-      background-image: url(./../img/logo_zodiac.jpg); }
+      background-image: url(./../img/logo_zodiac.png); }
     .page-first .footer .logos .logo-amundi {
-      background-image: url(./../img/logo_amundi.jpg); }
+      background-image: url(./../img/logo_amundi.png); }
   .page-first .footer .quote {
+    position: relative;
     height: 50%;
     width: 80%;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    transition: left 1s; }
     .page-first .footer .quote .quote-first {
       display: inline;
-      color: #90060a;
-      font-family: "FuturaStd Bold";
-      font-size: 24px; }
+      float: left;
+      margin-top: -15px;
+      height: 50px;
+      width: 50px;
+      background-image: url(../img/Quote.png);
+      background-size: 100%;
+      background-repeat: no-repeat; }
     .page-first .footer .quote .quote-txt {
       display: inline;
       color: #969696;
@@ -158,72 +168,89 @@ html, body {
       font-family: "FuturaStd Medium";
       font-size: 20px; }
 
-.page-second .wrap {
-  display: table;
-  float: left;
-  width: 100%;
-  height: 36px;
-  box-sizing: border-box;
-  padding: 24px 0px; }
-.page-second .main-txt {
-  display: table-cell;
-  vertical-align: middle;
-  width: 100%;
-  text-align: center;
-  font-family: "FuturaStd Medium";
-  font-size: 30px;
-  color: #79797f; }
-.page-second .color-white {
-  color: #969696; }
-.page-second .side {
-  overflow: hidden;
-  float: left;
-  width: 50%;
-  height: calc(100% - 248px);
-  display: table;
-  box-sizing: border-box;
-  padding: 0px 15%; }
-  .page-second .side .img-second {
-    width: 210px;
-    height: 170px;
-    margin-left: auto;
-    margin-right: auto;
-    background-size: contain;
-    background-repeat: no-repeat; }
-  .page-second .side .wrap-side {
+.page-second {
+  box-sizing: border-box; }
+  .page-second .wrap {
+    display: table;
+    float: left;
+    width: 100%;
+    height: 36px;
+    box-sizing: border-box;
+    padding: 24px 0px; }
+  .page-second .main-txt {
     display: table-cell;
     vertical-align: middle;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto; }
-  .page-second .side .img-left {
-    background-image: url(../img/ico\ expertises\ spec.png); }
-  .page-second .side .img-right {
-    background-image: url(../img/ico\ besoins\ rec.png); }
-  .page-second .side .legend-second {
-    font-family: "FuturaStd MediumOblique";
-    font-size: 20px;
-    width: 90%;
-    height: 50%;
-    margin-left: auto;
-    margin-right: auto; }
-  .page-second .side .span-red {
-    color: #90060a; }
-.page-second .footer {
-  float: left;
-  overflow: hidden;
-  width: 100%;
-  height: 164px;
-  background-image: url(../img/method.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  font-family: "FuturaStd Medium";
-  font-size: 40px;
-  color: #EFEFEF;
-  text-align: center; }
+    width: 100%;
+    text-align: center;
+    font-family: "FuturaStd Medium";
+    font-size: 30px;
+    color: #969696; }
+  .page-second .color-white {
+    color: #bebebe; }
+  .page-second .side {
+    overflow: hidden;
+    float: left;
+    width: 50%;
+    height: calc(100% - 398px);
+    display: table;
+    box-sizing: border-box;
+    padding: 0px 15%; }
+    .page-second .side .img-second {
+      width: 210px;
+      height: 170px;
+      margin-left: auto;
+      margin-right: auto;
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .page-second .side .wrap-side {
+      display: table-cell;
+      vertical-align: middle;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto; }
+    .page-second .side .img-left {
+      background-image: url(../img/ico\ expertises\ spec.png); }
+    .page-second .side .img-right {
+      background-image: url(../img/ico\ besoins\ rec.png); }
+    .page-second .side .legend-second {
+      font-family: "FuturaStd MediumOblique";
+      font-size: 20px;
+      width: 90%;
+      height: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      color: #bebebe; }
+    .page-second .side .span-red {
+      color: #90060a; }
+  .page-second .footer {
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    height: 254px;
+    box-sizing: border-box;
+    padding: 30px 0px;
+    background-image: url(../img/method.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    font-family: "FuturaStd Bold";
+    font-size: 40px;
+    color: #EFEFEF;
+    text-align: center; }
 
 .page-third {
-  border-bottom: 1px solid #90060a; }
+  position: relative;
+  float: left;
+  border-bottom: 1px solid #90060a;
+  height: 800px; }
+  .page-third .frise {
+    position: absolute;
+    transform: rotate(180deg);
+    background-image: url(../img/frise.png);
+    height: 913px;
+    width: 20px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    left: calc(50% - 10px); }
   .page-third .wrap-line {
     box-sizing: border-box;
     padding: 12px 15%;
@@ -241,32 +268,54 @@ html, body {
       color: #069067; }
     .page-third .wrap-line .left, .page-third .wrap-line .right {
       position: relative;
-      width: 30%;
+      width: 40%;
       height: 100%;
       font-family: "FuturaStd Light";
       font-size: 16px;
-      color: #7a797a; }
+      color: #7a797a;
+      background-size: contain;
+      background-repeat: no-repeat; }
     .page-third .wrap-line .left {
       float: left; }
     .page-third .wrap-line .right {
       float: right; }
     .page-third .wrap-line .icon {
-      position: relative;
-      width: 10%;
-      height: 50%;
-      margin-left: auto;
-      margin-right: auto;
+      position: absolute;
+      width: 75px;
+      height: 75px;
+      left: calc(50% - 38.5px);
       background-size: contain;
       background-repeat: no-repeat; }
     .page-third .wrap-line .icon-one {
+      top: 50px;
       background-image: url(../img/puce1.png); }
     .page-third .wrap-line .icon-two {
+      top: 290px;
       background-image: url(../img/puce2.png); }
     .page-third .wrap-line .icon-three {
+      top: 530px;
       background-image: url(../img/puce3.png); }
+    .page-third .wrap-line .left-one {
+      top: 100px;
+      left: 100px; }
+    .page-third .wrap-line .right-two {
+      left: -50px; }
+    .page-third .wrap-line .left-three {
+      left: 80px; }
+    .page-third .wrap-line .right-one {
+      background-image: url(../img/rouge.png); }
+    .page-third .wrap-line .left-two {
+      top: -50px;
+      left: 80px;
+      background-image: url(../img/bleu.png); }
+    .page-third .wrap-line .right-three {
+      top: -50px;
+      background-image: url(../img/vert.png); }
 
 .page-fourth {
   height: 150%;
+  float: left;
+  padding-top: 100px;
   background-image: url(../img/bottom.jpg);
   background-size: 100%;
   background-repeat: no-repeat; }
@@ -319,8 +368,8 @@ html, body {
     .page-fourth .up-part .right-img {
       background-image: url(../img/optimisation\ vignoble.png); }
   .page-fourth .down-part {
-    height: 50%;
-    background-image: url(../img/bandeau\ footer.jpg);
+    height: 504px;
+    background-image: url(../img/bandeau\ footer.png);
     opacity: 0.7;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -348,6 +397,8 @@ html, body {
       font-size: 20px;
       color: #efefef; }
     .page-fourth .down-part .logo {
+      padding-right: 100px;
+      padding-bottom: 100px;
       float: right;
       width: 100%;
       font-family: "FuturaStd Bold";

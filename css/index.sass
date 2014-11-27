@@ -80,22 +80,25 @@ html, body
 		width: 100%
 		height: calc(100% - 260px)
 		overflow: hidden
-		.image-content
-			position: relative
+		.wrap-content
 			height: 100%
 			width: 80%
+			margin-left: auto
+			margin-right: auto
+		.image-content
+			position: relative
+			height: 417px
+			width: 640px
 			background-image: url(../img/lettres\ scrabble.png)
 			background-size: contain
 			background-repeat: no-repeat
 		.txt-content
 			position: relative
-			// margin-top: -50%
 			width: 70%
 			height: 30%
-			left: 30%
-			top: -30%
-			box-sizing: border-box
-			padding-right: 10%
+			margin-left: 225px
+			// left: 12%
+			top: -120px
 			float: left
 			font-family: "FuturaStd Medium"
 			color: #353535
@@ -111,11 +114,12 @@ html, body
 		border-bottom: 1px solid #90060a
 		box-sizing: border-box
 		padding: 0px 10%
+		overflow: hidden
 		.logos
 			display: table
 			// float: left
 			height: 50%
-			width: 100%
+			width: 50%
 			margin-left: auto
 			margin-right: auto
 			overflow: hidden
@@ -135,22 +139,28 @@ html, body
 				-moz-filter: grayscale(100%)
 				filter: grayscale(100%)
 			.logo-bnp
-				background-image: url(./../img/logo_bnp.gif)
+				background-image: url(./../img/logo_bnp.png)
 			.logo-zodiac
-				background-image: url(./../img/logo_zodiac.jpg)
+				background-image: url(./../img/logo_zodiac.png)
 			.logo-amundi
-				background-image: url(./../img/logo_amundi.jpg)
+				background-image: url(./../img/logo_amundi.png)
 		.quote
 			// float: left
+			position: relative
 			height: 50%
 			width: 80%
 			margin-left: auto
 			margin-right: auto
+			transition: left 1s
 			.quote-first
 				display: inline
-				color: #90060a
-				font-family: "FuturaStd Bold"
-				font-size: 24px
+				float: left
+				margin-top: -15px
+				height: 50px
+				width: 50px
+				background-image: url(../img/Quote.png)
+				background-size: 100%
+				background-repeat: no-repeat
 			.quote-txt
 				display: inline
 				color: #969696
@@ -164,6 +174,7 @@ html, body
 				font-family: "FuturaStd Medium"
 				font-size: 20px
 .page-second
+	box-sizing: border-box
 	.wrap
 		display: table
 		float: left
@@ -178,14 +189,14 @@ html, body
 		text-align: center
 		font-family: "FuturaStd Medium"
 		font-size: 30px
-		color: #79797f
-	.color-white
 		color: #969696
+	.color-white
+		color: #bebebe
 	.side
 		overflow: hidden
 		float: left
 		width: 50%
-		height: calc(100% - 248px)
+		height: calc(100% - 398px)
 		display: table
 		box-sizing: border-box
 		padding: 0px 15%
@@ -216,22 +227,37 @@ html, body
 			height: 50%
 			margin-left: auto
 			margin-right: auto
+			color: #bebebe
 		.span-red
 			color: #90060a
 	.footer
 		float: left
 		overflow: hidden
 		width: 100%
-		height: 164px
+		height: 254px
+		box-sizing: border-box
+		padding: 30px 0px
 		background-image: url(../img/method.jpg)
-		background-size: 100%
+		background-size: 100% 100%
 		background-repeat: no-repeat
-		font-family: "FuturaStd Medium"
+		font-family: "FuturaStd Bold"
 		font-size: 40px
 		color: #EFEFEF
 		text-align: center
 .page-third
+	position: relative
+	float: left
 	border-bottom: 1px solid #90060a
+	height: 800px
+	.frise
+		position: absolute
+		transform: rotate(180deg)
+		background-image: url(../img/frise.png)
+		height: 913px
+		width: 20px
+		background-size: 100% 100%
+		background-repeat: no-repeat
+		left: calc(50% - 10px)
 	.wrap-line
 		box-sizing: border-box
 		padding: 12px 15%
@@ -249,31 +275,53 @@ html, body
 			color: #069067
 		.left, .right
 			position: relative
-			width: 30%
+			width: 40%
 			height: 100%
 			font-family: "FuturaStd Light"
 			font-size: 16px
 			color: #7a797a
+			background-size: contain
+			background-repeat: no-repeat
 		.left
 			float: left
 		.right
 			float: right
 		.icon
-			position: relative
-			width: 10%
-			height: 50%
-			margin-left: auto
-			margin-right: auto
+			position: absolute
+			width: 75px
+			height: 75px
+			left: calc(50% - 38.5px)
 			background-size: contain
 			background-repeat: no-repeat
 		.icon-one
+			top: 50px
 			background-image: url(../img/puce1.png)
 		.icon-two
+			top: 290px
 			background-image: url(../img/puce2.png)
 		.icon-three
+			top: 530px
 			background-image: url(../img/puce3.png)
+		.left-one
+			top: 100px
+			left: 100px
+		.right-two
+			left: -50px
+		.left-three
+			left: 80px
+		.right-one
+			background-image: url(../img/rouge.png)
+		.left-two
+			top: -50px
+			left: 80px
+			background-image: url(../img/bleu.png)
+		.right-three
+			top: -50px
+			background-image: url(../img/vert.png)
 .page-fourth
 	height: 150%
+	float: left
+	padding-top: 100px
 	background-image: url(../img/bottom.jpg)
 	background-size: 100%
 	background-repeat: no-repeat
@@ -326,8 +374,8 @@ html, body
 		.right-img
 			background-image: url(../img/optimisation\ vignoble.png)
 	.down-part
-		height: 50%
-		background-image: url(../img/bandeau\ footer.jpg)
+		height: 504px
+		background-image: url(../img/bandeau\ footer.png)
 		opacity: 0.7
 		background-size: 100%
 		background-repeat: no-repeat
@@ -355,6 +403,8 @@ html, body
 			font-size: 20px
 			color: #efefef
 		.logo
+			padding-right: 100px
+			padding-bottom: 100px
 			float: right
 			width: 100%
 			font-family: "FuturaStd Bold"
