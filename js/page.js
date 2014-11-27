@@ -172,24 +172,28 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 						['.wrap', [{tag:'.main-txt', as: 'mainSecondTxt',}]],
 						['.left-side.side', [{tag: '.wrap-left.wrap-side', children: [
 							'.img-left.img-second',
-							{tag: '.legend-left.legend-second', as: 'secondTxtLeft'}
+							{tag: '.legend-left.legend-second', as: 'secondTxtLeft'},
+							{tag: '.list-left.list-second', as: 'secondListLeft'}
 						]}]],
 						['.right-side.side', [{tag: '.wrap-right.wrap-side', children: [
 							'.img-right.img-second',
-							{tag: '.legend-right.legend-second', as: 'secondTxtRight'}
+							{tag: '.legend-right.legend-second', as: 'secondTxtRight'},
+							{tag: '.list-right.list-second', as: 'secondListRight'}
 						]}]],
 						{tag: '.footer', as: 'secondFooter'}
 					]},/*END*/
 					{tag: '.page-third.page', attr: {name: 'page-third'}, children: [
-						'.frise',
-						['.wrap-line', [
-							{tag: '.left-one.left', as: 'leftOne'}, '.icon-one.icon', '.right-one.right'
-						]],
-						['.wrap-line', [
-							'.left-two.left', '.icon-two.icon', {tag: '.right-two.right', as: 'rightTwo'}
-						]],
-						['.wrap-line', [
-							{tag: '.left-three.left', as: 'leftThree'}, '.icon-three.icon', '.right-three.right'
+						['.wrap-page', [
+							'.frise',
+							['.wrap-line', [
+								{tag: '.left-one.left', as: 'leftOne'}, '.icon-one.icon', '.right-one.right'
+							]],
+							['.wrap-line', [
+								'.left-two.left', '.icon-two.icon', {tag: '.right-two.right', as: 'rightTwo'}
+							]],
+							['.wrap-line', [
+								{tag: '.left-three.left', as: 'leftThree'}, '.icon-three.icon', '.right-three.right'
+							]]
 						]]
 					]},/*END*/
 					{tag: '.page-fourth.page#page-fourth', children: [
@@ -204,7 +208,7 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 							['.wrap-title', [{tag: '.title', as: 'fourthTitleDown'}]],
 							{tag: '.contact', as: 'fourthContact'},
 							{tag: '.logo', as: 'fourthLogo'}
-						]],
+						]]
 					]}
 				]}
 			);
@@ -238,6 +242,13 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 			this.secondFooter.innerHTML = this.HTMLentities('Notre méthode ?') + '<br />'
 											+ this.HTMLentities('Reprendre la main sur ses données.') + '<br />'
 											+ this.HTMLentities('Pour prendre les bonnes décisions.');
+			this.secondListLeft.innerHTML = '<ul><li>' + this.HTMLentities('Coûts par activité') + '</li>'
+									+ '<li>' + this.HTMLentities('Mécanismes de refacturation') + '</li>'
+									+ '<li>' + this.HTMLentities('Gestion de scénarios et simulations de coûts') + '</li></ul>';
+			this.secondListRight.innerHTML = '<ul><li>' + this.HTMLentities('Génération de devis') + '</li>'
+									+ '<li>' + this.HTMLentities('Calcul de prix de revient') + '</li>'
+									+ '<li>' + this.HTMLentities('Contrôle et fiabilisation de données') + '</li></ul>';
+
 
 			this.leftOne.innerHTML = '<span class="span-title"><span class="span-red">'
 										+ this.HTMLentities('Préparer le cadre de travail') + '</span></span><br /><br />'
