@@ -114,14 +114,12 @@ html, body
 		height: 188px
 		border-top: 1px solid #90060a
 		border-bottom: 1px solid #90060a
-		box-sizing: border-box
-		padding: 0px 10%
 		overflow: hidden
 		.logos
 			display: table
 			// float: left
 			height: 50%
-			width: 50%
+			width: 20%
 			margin-left: auto
 			margin-right: auto
 			overflow: hidden
@@ -150,14 +148,16 @@ html, body
 		.wrap-quote
 			position: relative
 			float: left
-			width: 600%
+			width: 300%
 			height: 50%
 			transition: left 1s
 			left: 0px
 		.quote
+			box-sizing: border-box
 			float: left
 			height: 100%
 			width: 33%
+			padding: 0px 5%
 			.quote-first
 				float: left
 				display: inline
@@ -169,6 +169,7 @@ html, body
 				background-repeat: no-repeat
 			.quote-txt
 				float: left
+				width: calc(100% -50px)
 				display: inline
 				width: calc(100% - 50px)
 				color: #969696
@@ -176,7 +177,8 @@ html, body
 				font-size: 20px
 			.quote-author
 				float: left
-				margin-left: 40%
+				padding-right: 72px
+				text-align: right
 				width: 100%
 				color: #969696
 				font-family: "FuturaStd Medium"

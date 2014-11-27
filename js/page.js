@@ -285,7 +285,7 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 
 			this.current = mark;
 
-			this.wrapQuote.style.left = (-mark * 200) + '%';
+			this.wrapQuote.style.left = (-mark * 100) + '%';
 
 		},
 
