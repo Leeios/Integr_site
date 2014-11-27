@@ -207,9 +207,11 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 						['.down-part.part', [
 							['.wrap-title', [{tag: '.title', as: 'fourthTitleDown'}]],
 							{tag: '.contact', as: 'fourthContact'},
-							{tag: '.logo', as: 'fourthLogo'}
+							{tag: '.logo', as: 'fourthLogo'},
+							{tag: '.down-copyright', as: 'copyright'}
 						]]
-					]}
+					]},
+					'.adjust-red'
 				]}
 			);
 		},
@@ -269,6 +271,7 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 											+ this.HTMLentities('+ (33) 6 87 24 90 10')
 											+ '<br />' + this.HTMLentities('stephane.janin@myexpertizer.com');
 			this.fourthLogo.innerHTML = 'Myexpertizer.';
+			this.copyright.innerHTML = 'Copyright Myexpertizer 2014'
 		},
 
 		switchQuote: function(mark) {
