@@ -144,10 +144,15 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 									}
 								]]
 							]],
-							['.content', [['.wrap-content', [
-								'.image-content',
-								{tag: '.txt-content', as: 'contentFirstTxT'}
-							]]]]
+							['.content', [
+								{tag: '.login-box', as: 'loginBox', children: [
+									{tag: 'a.mail-to ',as: 'loginTxt'}
+								]},
+								['.wrap-content', [
+									'.image-content',
+									{tag: '.txt-content', as: 'contentFirstTxT'}
+								]]
+							]]
 						]],
 						['.footer', [['.logos', [
 							['.contain', [{tag: '.logo-bnp.logo', as: 'logo0', events: {
@@ -202,6 +207,7 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 						]]
 					]},/*END*/
 					{tag: '.page-fourth.page#page-fourth', children: [
+						'.next-puce',
 						['.up-part.part', [
 							['.wrap-title', [{tag: '.title', as: 'fourthTitle'}]],
 							['.content', [
@@ -223,6 +229,8 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 
 		'+init': function() {
 			this.contentFirstTxT.innerHTML = 'Le logiciel <span class="special-logo">MyExpertizer</span>' + this.HTMLentities(' rend vos données exploitables, de manière pérenne, grâce à des expertises métiers embarquées et des règles intelligentes de traitement.');
+			this.loginTxt.innerHTML = 'La plateforme est en ' + this.HTMLentities('accès privé - ')
+										+ '<a href="#mailto:stephane.janin@myexpertizer.com">contactez nous</a> pour recevoir vos ' + this.HTMLentities('accès');
 
 			/*0: BNP, 1: Zodiac, 2:Amundi*/
 			this.quoteTxt0.innerHTML = 'It was really awesome. MyExpertizer has made my unreadable Excel actionnable in 1h30 where it usually took 3 days"';
@@ -236,6 +244,7 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 			this['logo1'].style.opacity = '0.5';
 			this['logo2'].style.opacity = '0.5';
 			this.current = 0;
+			this.logShow = false;
 			// this.switchQuote(0);
 
 			this.mainSecondTxt.innerHTML = 'Des solutions <span class="color-white">' + this.HTMLentities('pour vos coûts.') + '</span> A bas ' + this.HTMLentities('coûts.');
@@ -290,7 +299,15 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 		},
 
 		displayLoginBox: function(e) {
-			;
+			if (!this.logShow) {
+				this.loginBox.style.top = '0';
+				this.loginBox.style.left = '80%';
+				this.logShow = true;
+			} else {
+				this.loginBox.style.top = '-20%';
+				this.loginBox.style.left = '120%';
+				this.logShow = false;
+			}
 		}
 
 	})
