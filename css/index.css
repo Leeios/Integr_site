@@ -16,11 +16,11 @@ html, body {
   src: url("./font/FuturaFont/FuturaStd-Bold.svg#bingo") format("svg");
   src: url("./font/FuturaFont/FuturaStd-Bold.otf") format("opentype"); }
 @font-face {
-  font-family: "FuturaStd MediumOblique";
-  src: url("./font/FuturaFont/FuturaStd-MediumOblique.eot");
+  font-family: "FuturaStd LightOblique";
+  src: url("./font/FuturaFont/FuturaStd-LightOblique.eot");
   src: local("futurastd");
-  src: url("./font/FuturaFont/FuturaStd-MediumOblique.svg#bingo") format("svg");
-  src: url("./font/FuturaFont/FuturaStd-MediumOblique.otf") format("opentype"); }
+  src: url("./font/FuturaFont/FuturaStd-LightOblique.svg#bingo") format("svg");
+  src: url("./font/FuturaFont/FuturaStd-LightOblique.otf") format("opentype"); }
 @font-face {
   font-family: "FuturaStd Light";
   src: url("./font/FuturaFont/FuturaStd-Light.eot");
@@ -40,11 +40,12 @@ html, body {
 .page-first .header {
   float: left;
   width: 100%;
-  height: 72px;
+  height: 84px;
   box-sizing: border-box;
-  padding: 16px 6px;
+  padding: 24px 6px;
   border-bottom: 1px solid #90060a; }
   .page-first .header .banner {
+    margin-left: 12px;
     font-family: "FuturaStd Bold";
     float: left;
     color: #90060a;
@@ -127,7 +128,7 @@ html, body {
 .page-first .footer {
   float: left;
   width: 100%;
-  height: 188px;
+  height: 156px;
   border-top: 1px solid #90060a;
   border-bottom: 1px solid #90060a;
   overflow: hidden; }
@@ -188,7 +189,7 @@ html, body {
       display: inline;
       width: calc(100% - 50px);
       color: #969696;
-      font-family: "FuturaStd MediumOblique";
+      font-family: "FuturaStd LightOblique";
       font-size: 20px; }
     .page-first .footer .quote .quote-author {
       float: left;
@@ -196,7 +197,7 @@ html, body {
       text-align: right;
       width: 100%;
       color: #969696;
-      font-family: "FuturaStd Medium";
+      font-family: "FuturaStd Light";
       font-size: 20px; }
 
 .page-second {
@@ -218,14 +219,19 @@ html, body {
     color: #969696; }
   .page-second .color-white {
     color: #bebebe; }
+  .page-second .left-side {
+    padding-left: 17%;
+    padding-right: 13%; }
+  .page-second .right-side {
+    padding-left: 13%;
+    padding-right: 17%; }
   .page-second .side {
     overflow: hidden;
     float: left;
     width: 50%;
     height: 60%;
     display: table;
-    box-sizing: border-box;
-    padding: 0px 15%; }
+    box-sizing: border-box; }
     .page-second .side .img-second {
       width: 210px;
       height: 170px;
@@ -322,7 +328,8 @@ html, body {
       font-size: 16px;
       color: #7a797a;
       background-size: contain;
-      background-repeat: no-repeat; }
+      background-repeat: no-repeat;
+      margin-top: 60px; }
     .page-third .wrap-line .left {
       float: left; }
     .page-third .wrap-line .right {
@@ -344,19 +351,22 @@ html, body {
       top: 530px;
       background-image: url(../img/puce3.png); }
     .page-third .wrap-line .left-one {
-      top: 100px;
-      left: 40px; }
+      width: 30%; }
     .page-third .wrap-line .right-two {
-      left: 10px; }
+      width: 30%; }
     .page-third .wrap-line .left-three {
-      left: 40px; }
+      width: 30%; }
     .page-third .wrap-line .right-one {
+      margin-top: 20px;
+      width: 300px;
       background-image: url(../img/rouge.png); }
     .page-third .wrap-line .left-two {
-      left: 30px;
+      margin-top: 20px;
+      width: 300px;
       background-image: url(../img/bleu.png); }
     .page-third .wrap-line .right-three {
       top: -50px;
+      width: 300px;
       background-image: url(../img/vert.png); }
 
 .page-fourth {
@@ -364,7 +374,7 @@ html, body {
   float: left;
   padding-top: 100px;
   background-image: url(../img/bottom.jpg);
-  background-size: 100% auto;
+  background-size: 100% 100%;
   background-repeat: no-repeat; }
   .page-fourth .next-puce {
     margin-left: auto;
