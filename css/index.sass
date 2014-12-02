@@ -40,6 +40,7 @@ html, body
 		background-image: url(../img/landing.jpg)
 		background-size: cover
 		background-repeat: no-repeat
+		width: 100%
 	.header
 		float: left
 		width: 100%
@@ -80,9 +81,9 @@ html, body
 	.content
 		float: left
 		width: 100%
-		height: calc(100% - 260px)
-		min-height: 400px
+		height: 414px
 		overflow: hidden
+		position: relative
 		.login-box
 			position: relative
 			top: -20%
@@ -104,9 +105,11 @@ html, body
 				text-align: center
 		.wrap-content
 			height: 100%
-			width: 80%
-			margin-left: auto
-			margin-right: auto
+			position: absolute
+			width: 970px
+			top: 0
+			left: 50%
+			margin-left: -485px
 		.image-content
 			position: relative
 			height: 417px
@@ -116,15 +119,14 @@ html, body
 			background-repeat: no-repeat
 		.txt-content
 			position: relative
-			width: 70%
-			height: 30%
-			margin-left: 225px
+			width: 800px
 			// left: 12%
-			top: -120px
+			top: -106px
 			float: left
 			font-family: "FuturaStd Medium"
 			color: #353535
 			font-size: 22px
+			left: 210px
 		.special-logo
 			font-family: "FuturaStd Bold"
 			color: #90060a
@@ -274,14 +276,22 @@ html, body
 			padding: 6px 0px
 	.footer
 		float: left
-		overflow: hidden
 		width: 100%
-		height: 254px
+		height: 257px
 		box-sizing: border-box
-		padding: 30px 0px
-		background-image: url(../img/method.jpg)
-		background-size: 100% 100%
-		background-repeat: no-repeat
+		position : relative
+		margin-bottom: 48px
+		padding: 56px 0
+		background-color: #91060b
+		.bg
+			background-image: url(../img/method.jpg)
+			width: 1086px
+			height: 302px
+			position : absolute
+			top: 0
+			left: 50%
+			margin-left: -543px
+			z-index: -1
 		font-family: "FuturaStd Bold"
 		font-size: 40px
 		color: #EFEFEF
@@ -428,11 +438,27 @@ html, body
 		.right-img
 			background-image: url(../img/optimisation\ vignoble.png)
 	.down-part
-		top: 50%
 		height: 504px
 		width: 100%
-		background-image: url(../img/bandeau\ footer.png)
-		opacity: 0.7
+		position: relative
+		.table
+			width: 100%
+			height: 504px
+			position: absolute
+			z-index: -1
+			left: 0
+			top: 0
+			border-collapse: collapse
+			.left, .right
+				background-color: #91060b
+				left: 0
+				top: 0
+			.bg
+				width: 1086px
+				height: 504px
+				z-index: -1
+				background-image: url(../img/bandeau\ footer.png)
+		opacity: .7
 		background-size: 100% 100%
 		background-repeat: no-repeat
 		box-sizing: border-box
