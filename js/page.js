@@ -232,7 +232,7 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 		'+init': function() {
 			this.contentFirstTxT.innerHTML = 'Le logiciel <span class="special-logo">MyExpertizer</span>' + this.HTMLentities(' rend vos données exploitables, de manière pérenne, grâce à des expertises métiers embarquées et des règles intelligentes de traitement.');
 			this.loginTxt.innerHTML = 'La plateforme est en ' + this.HTMLentities('accès privé - ')
-										+ '<a href="#mailto:stephane.janin@myexpertizer.com">contactez nous</a> pour recevoir vos ' + this.HTMLentities('accès');
+										+ '<a href="mailto:stephane.janin@myexpertizer.com">contactez nous</a> pour recevoir vos ' + this.HTMLentities('accès');
 
 			/*0: BNP, 1: Zodiac, 2:Amundi*/
 			this.quoteTxt0.innerHTML = 'It was really awesome. MyExpertizer has made my unreadable Excel actionnable in 1h30 where it usually took 3 days"';
