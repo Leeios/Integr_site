@@ -2,7 +2,6 @@ sand.define('PageCreation', [
 	'DOM/toDOM',
 	'Seed'
 	], function(r) {
-
 	return r.Seed.extend({
 
 HTMLentities: function(t) {
@@ -154,22 +153,24 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 								]]
 							]]
 						]],
-						['.footer', [['.logos', [
-							['.contain', [{tag: '.logo-bnp.logo', as: 'logo0', events: {
-								click: function() {
-									this.switchQuote(0);
-								}.bind(this)
-							}}]],
-							['.contain', [{tag: '.logo-zodiac.logo', as: 'logo1', events: {
-								click: function() {
-									this.switchQuote(1);
-								}.bind(this)
-							}}]],
-							['.contain', [{tag: '.logo-amundi.logo', as: 'logo2', events: {
-								click: function() {
-									this.switchQuote(2);
-								}.bind(this)
-							}}]]]
+						['.footer', [
+							['.logos', [
+								['.contain', [{tag: '.logo-bnp.logo', as: 'logo0', events: {
+									click: function() {
+										this.switchQuote(0);
+									}.bind(this)
+								}}]],
+								['.contain', [{tag: '.logo-zodiac.logo', as: 'logo1', events: {
+									click: function() {
+										this.switchQuote(1);
+									}.bind(this)
+								}}]],
+								['.contain', [{tag: '.logo-amundi.logo', as: 'logo2', events: {
+									click: function() {
+										this.switchQuote(2);
+									}.bind(this)
+								}}]
+							]]
 						],
 						{tag: '.wrap-quote', as: 'wrapQuote', children: [
 							['.quote', ['.quote-first', {tag: '.quote-txt', as: 'quoteTxt0'}, {tag: '.quote-author', as: 'quoteAuthor0'}]],
@@ -190,7 +191,7 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 							{tag: '.legend-right.legend-second', as: 'secondTxtRight'},
 							{tag: '.list-right.list-second', as: 'secondListRight'}
 						]}]],
-						{tag: '.footer', as: 'secondFooter'}
+						{tag: '.footer', as: 'secondFooter', children : ['.bg'] }
 					]},/*END*/
 					{tag: '.page-third.page', attr: {name: 'page-third'}, children: [
 						['.wrap-page', [
@@ -216,6 +217,7 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 							]]
 						]],
 						['.down-part.part', [
+							['table.table', [['tr', ['td.left', 'td.bg', 'td.right']]]],
 							['.wrap-title', [{tag: '.title', as: 'fourthTitleDown'}]],
 							{tag: '.contact', as: 'fourthContact'},
 							{tag: '.logo', as: 'fourthLogo'},
@@ -251,7 +253,7 @@ t = t.replace(/ÿ/g,'&yuml;'); // 255 FF
 
 			this.secondTxtLeft.innerHTML = "Besoin d'une <span class='span-red'>" + this.HTMLentities('expertise spécifique') + '</span> pour votre domaine ' + this.HTMLentities("d'activités ?");
 			this.secondTxtRight.innerHTML = 'Besoin de gagner du temps sur des <span class="span-red">besoins recurrents ?</span>';
-			this.secondFooter.innerHTML = this.HTMLentities('Notre méthode ?') + '<br />'
+			this.secondFooter.innerHTML += this.HTMLentities('Notre méthode ?') + '<br />'
 											+ this.HTMLentities('Reprendre la main sur ses données.') + '<br />'
 											+ this.HTMLentities('Pour prendre les bonnes décisions.');
 			this.secondListLeft.innerHTML = '<ul><li>' + this.HTMLentities('Coûts par activité') + '</li>'
