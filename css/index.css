@@ -245,7 +245,7 @@ html, body {
       float: left;
       display: table-cell;
       vertical-align: middle;
-      width: 80%;
+      width: 90%;
       margin-left: auto;
       margin-right: auto; }
     .page-second .side .img-left {
@@ -255,10 +255,11 @@ html, body {
     .page-second .side .legend-second {
       font-family: "FuturaStd Medium";
       font-size: 20px;
-      width: 90%;
+      width: 95%;
       height: 50%;
       margin-left: auto;
       margin-right: auto;
+      text-align: center;
       color: #969696; }
     .page-second .side .span-red {
       color: #90060a; }
@@ -396,6 +397,7 @@ html, body {
     background-size: 100% auto;
     background-repeat: no-repeat; }
   .page-fourth .part {
+    position: relative;
     float: left;
     width: 100%; }
   .page-fourth .up-part {
@@ -446,7 +448,7 @@ html, body {
   .page-fourth .down-part {
     height: 504px;
     width: 100%;
-    position: relative;
+    margin-top: -50px;
     opacity: 0.7;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -488,7 +490,7 @@ html, body {
       text-align: center;
       width: 100%;
       font-family: "FuturaStd Medium";
-      font-size: 20px;
+      font-size: 30px;
       color: #efefef; }
     .page-fourth .down-part .logo {
       padding-right: 100px;
