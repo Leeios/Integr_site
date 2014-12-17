@@ -82,15 +82,10 @@ sand.define('Game', [
 			/*Random nb answers*/
 			var maxAnswers = Math.floor(Math.random() * 3 + 3);
 			this.answers.length = maxAnswers;
-			for(var i = 0; i < maxAnswers; i++) {
-				this.answers[i] = "";
-			}
-
+			for(var i = 0; i < maxAnswers; i++) this.answers[i] = "";
 
 			this.answers[0] = this.data.answers[this.iQuestion];
-			for (var i = 1; i < maxAnswers; i++) {
-				this.addAnswer(i);
-			}
+			for (var i = 1; i < maxAnswers; i++) this.addAnswer(i);
 
 			this.shuffle(this.answers);
 
@@ -113,38 +108,33 @@ sand.define('Game', [
 					this.launchTime = new Date().getTime();
 					if (this.current === this.answers.length) {
 						this.resetAnswers();
-						this.message("Nobody found the answer. You bad. All of you.");
+						this.message("Nobody found the answer.");
 						setTimeout(this.newQuestion.bind(this), 2000);/*TIME between questions*/
-					} else {
-						this.answer.innerHTML = this.answers[this.current];
-					}
+					} else this.answer.innerHTML = this.answers[this.current];
 				}.bind(this), i * this.timeAnswer);
 			}
 		},
 
 		playerPush: function(id) {
+			if (this.current === -2) return ;
 			var RT = new Date().getTime() - this.launchTime;
 			console.log('Player ' + id + ' answered in ' + (RT / 1000) + ' seconds.');
 			/*HARD POINTS*/
 			var nbPts = Math.floor((this.timeAnswer - RT) / 100);
 			/*MATCH CONDITION*/
 			if (this.answers[this.current] === this.data.answers[this.iQuestion]) {
-				console.log('GG WP !');
+				this.current = -2;/*Block other reponses*/
 				this.resetAnswers();
-				this.message("Good answer was " + this.data.answers[this.iQuestion] + "<br />WP player " + id)
-				setTimeout(this.newQuestion.bind(this), this.timeBetQuestions);/*TIME between questions*/
-			} else {
-				console.log('Too Bad...');
-				nbPts = -nbPts;
-			}
+				this.message("Good answer was " + this.data.answers[this.iQuestion] + "<br />Well play player " + id);
+				setTimeout(this.newQuestion.bind(this), this.timeBetQuestions);
+			} else nbPts = -nbPts;
+
 			this['player' + id].setPts(this.adjustPts(nbPts));
 		},
 
 		resetAnswers: function() {
 			/*Reset timeout answers*/
-			for (var i = 0, len = this.timeOut.length; i < len; i++) {
-				clearTimeout(this.timeOut[i]);
-			}
+			for (var i = 0, len = this.timeOut.length; i < len; i++) clearTimeout(this.timeOut[i]);
 			this.timeOut = [];
 		},
 
