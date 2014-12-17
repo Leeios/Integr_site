@@ -71,6 +71,7 @@ sand.define('Game', [
 			/*Check end game*/
 			this.nbQuestions--;
 			if (this.nbQuestions <= 0) {
+				this.message('Game Over');
 				console.log('Game Over');
 				return ;
 			}
