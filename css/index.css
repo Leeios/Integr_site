@@ -36,13 +36,13 @@ html, body {
     float: left;
     width: 100%;
     height: 10%; }
-    .game .players .player {
+    .game .players .wrap-player {
       float: left;
-      width: 33.33%;
-      height: 100%; }
-    .game .players .player0 {
-      background-color: #961006; }
-    .game .players .player1 {
-      background-color: #109606; }
-    .game .players .player2 {
-      background-color: #061096; }
+      height: 100%;
+      display: table; }
+      .game .players .wrap-player .player {
+        display: table-cell;
+        font-size: 16px;
+        margin: auto;
+        text-align: center;
+        vertical-align: middle; }
