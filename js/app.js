@@ -1,5 +1,5 @@
-sand.require('PageCreation', function(r) {
-	page = new r.PageCreation();
+sand.require('AhBT', function(r) {
+	page = new r.AhBT();
 	window.onload = function() {
 		document.body.appendChild(page.el);
 	}
